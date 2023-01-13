@@ -61,6 +61,10 @@ impl Event {
         }
     }
 
+    pub fn timestamp(&mut self, timestamp: NaiveDateTime) {
+        self.timestamp = Some(timestamp);
+    }
+
     /// Errors if `prop` fails to serialize
     pub fn insert_prop<K: Into<String>, P: Serialize>(
         &mut self,
