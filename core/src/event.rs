@@ -29,14 +29,14 @@ impl InnerEventBatch {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, Eq)]
+#[derive(Serialize, Debug, PartialEq, Eq, Clone)]
 pub struct Event {
     event: String,
     properties: Properties,
     timestamp: Option<NaiveDateTime>,
 }
 
-#[derive(Serialize, Debug, PartialEq, Eq)]
+#[derive(Serialize, Debug, PartialEq, Eq, Clone)]
 pub struct Properties {
     distinct_id: String,
     #[serde(flatten)]
